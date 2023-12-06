@@ -2,6 +2,7 @@ import pygame
 import random
 import time
 import image
+import ui
 from settings import *
 
 class Mosquito:
@@ -13,7 +14,36 @@ class Mosquito:
         moving_direction, start_pos = self.define_spawn_pos(size)
         # sprite
         self.rect = pygame.Rect(start_pos[0], start_pos[1], size[0]//1.4, size[1]//1.4)
-        self.images = [image.load("Assets/mosquito/mosquito.png", size=size, flip=moving_direction=="right")]
+        intNum = random.randint(1,9)
+        match intNum:
+            case 1:
+                self.value = 1
+                self.images = [image.load("Assets/mosquito/1.png", size=size, flip=moving_direction == "right")]
+            case 2:
+                self.value = 2
+                self.images = [image.load("Assets/mosquito/2.png", size=size, flip=moving_direction == "right")]
+            case 3:
+                self.value = 3
+                self.images = [image.load("Assets/mosquito/3.png", size=size, flip=moving_direction == "right")]
+            case 4:
+                self.value = 4
+                self.images = [image.load("Assets/mosquito/4.png", size=size, flip=moving_direction == "right")]
+            case 5:
+                self.value = 5
+                self.images = [image.load("Assets/mosquito/5.png", size=size, flip=moving_direction == "right")]
+            case 6:
+                self.value = 6
+                self.images = [image.load("Assets/mosquito/6.png", size=size, flip=moving_direction == "right")]
+            case 7:
+                self.value = 7
+                self.images = [image.load("Assets/mosquito/7.png", size=size, flip=moving_direction == "right")]
+            case 8:
+                self.value = 8
+                self.images = [image.load("Assets/mosquito/8.png", size=size, flip=moving_direction == "right")]
+            case 9:
+                self.value = 9
+                self.images = [image.load("Assets/mosquito/9.png", size=size, flip=moving_direction == "right")]
+
         self.current_frame = 0
         self.animation_timer = 0
 
@@ -63,4 +93,7 @@ class Mosquito:
 
     def kill(self, mosquitos): # remove the mosquito from the list
         mosquitos.remove(self)
-        return 1
+        if(self.value % 2 == 0):
+            return 1
+        else:
+            return -BEE_PENALITY

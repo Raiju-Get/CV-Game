@@ -40,10 +40,14 @@ class Hand:
         if self.left_click: # if left click
             for insect in self.on_insect(insects):
                 insect_score = insect.kill(insects)
-                score += insect_score
+                if(score >=0):
+                    score += insect_score
+                else:
+                    score = 0
                 sounds["slap"].play()
                 if insect_score < 0:
                     sounds["screaming"].play()
+
         else:
             self.left_click = False
         return score

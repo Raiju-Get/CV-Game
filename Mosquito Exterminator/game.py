@@ -72,9 +72,10 @@ class Game:
                     shadow=True, shadow_color=(255,255,255))
         # draw the time left
         timer_text_color = (160, 40, 0) if self.time_left < 5 else COLORS["timer"] # change the text color if less than 5 s left
+
         ui.draw_text(self.surface, f"Time left : {self.time_left}", (SCREEN_WIDTH//2, 5),  timer_text_color, font=FONTS["medium"],
                     shadow=True, shadow_color=(255,255,255))
-
+        ui.draw_text(self.surface, f"Smack the even numbers?", (10,50), timer_text_color,font=FONTS["medium"],shadow=True, shadow_color=(255, 255, 255))
 
     def game_time_update(self):
         self.time_left = max(round(GAME_DURATION - (time.time() - self.game_start_time), 1), 0)

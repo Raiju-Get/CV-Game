@@ -1,6 +1,6 @@
 import pygame
 
-WINDOW_NAME = "Mosquito Exterminator"
+WINDOW_NAME = "Even Number Smacker"
 GAME_TITLE = WINDOW_NAME
 
 SCREEN_WIDTH, SCREEN_HEIGHT = 1200, 700
@@ -27,7 +27,7 @@ ANIMATION_SPEED = 0.08 # the frame of the insects will change every X sec
 GAME_DURATION = 60 # the game will last X sec
 MOSQUITOS_SPAWN_TIME = 1
 MOSQUITOS_MOVE_SPEED = {"min": 2, "max": 5}
-BEE_PENALITY = 2 # will remove X of the score of the player (if he kills a bee)
+BEE_PENALITY = 1 # will remove X of the score of the player (if he kills a bee)
 
 # colors
 COLORS = {"title": (255, 255, 255), "score": (255, 255, 255), "timer": (255, 255, 255),

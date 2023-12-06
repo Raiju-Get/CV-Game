@@ -6,8 +6,8 @@ def load(img_path, size="default", convert="alpha", flip=False):
     else:
         img = pygame.image.load(img_path).convert()
 
-    if flip:
-        img = pygame.transform.flip(img, True, False)
+    #if flip:
+        #img = pygame.transform.flip(img, True, False)
 
     if size != "default":
         img = scale(img, size)
